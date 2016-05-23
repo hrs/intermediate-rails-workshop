@@ -1,7 +1,9 @@
 <h1>My Dashboard</h1>
 
 <%= form_for @new_shout do |form| %>
-  <%= form.text_area :body, placeholder: "Shout content" %>
+  <div>
+    <%= form.text_area :body, placeholder: "Shout content" %>
+  </div>
   <%= form.submit "Shout!" %>
 <% end %>
 

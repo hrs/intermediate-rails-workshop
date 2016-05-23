@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = find_user
+    @shouts = @user.shouts
+  end
+
   def create
     @user = sign_up(user_params)
 
@@ -17,6 +22,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def find_user
+    User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
