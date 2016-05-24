@@ -1,5 +1,12 @@
 <h1>My Dashboard</h1>
 
+<%= form_for @photo_shout do |form| %>
+  <div>
+    <%= form.file_field :image %>
+  </div>
+  <%= form.submit "Shout!" %>
+<% end %>
+
 <%= form_for @text_shout do |form| %>
   <div>
     <%= form.text_area :body, placeholder: "Shout content" %>
