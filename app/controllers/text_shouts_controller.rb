@@ -1,7 +1,6 @@
 class TextShoutsController < ApplicationController
   def create
-    text_shout = TextShout.new(text_shout_params)
-    shout = current_user.shouts.build(content: text_shout)
+    shout = current_user.shouts.build(content: build_content)
     if shout.save
       redirect_to dashboard_path
     else
@@ -11,6 +10,10 @@ class TextShoutsController < ApplicationController
   end
 
   private
+
+  def build_content
+    TextShout.new(text_shout_params)
+  end
 
   def text_shout_params
     params.require(:text_shout).permit(:body)
