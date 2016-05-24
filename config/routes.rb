@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
   resource :session, only: [:new, :create, :destroy]
-  resources :shouts, only: [:create, :show]
+  resources :shouts, only: [:show]
+  resources :text_shouts, only: [:create]
   resources :users, only: [:new, :create, :show]
 end
