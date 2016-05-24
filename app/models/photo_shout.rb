@@ -1,7 +1,5 @@
 class PhotoShout < ActiveRecord::Base
-  has_attached_file :image, styles: {
-    shout: "200x200>"
-  }
+  has_attached_file :image
   validates_attachment :image, content_type: {
     content_type: ["image/jpeg", "image/gif", "image/png"]
   }
